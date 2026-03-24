@@ -142,6 +142,69 @@ Through this project, I learned:
 * Process sensor data (LiDAR and camera)
 * Connect with real hardware (Raspberry Pi or Arduino)
 
+## Recent Progress: Robot Modeling and Visualization
+
+In this phase of the project, I extended the system from basic ROS 2 communication to actual robot modeling and visualization.
+
+### URDF Robot Model
+
+* Created a new package: `my_robot_description`
+* Defined a robot using URDF (Unified Robot Description Format)
+* Built a simple differential drive robot consisting of:
+
+  * `base_link` (robot body)
+  * `left_wheel` and `right_wheel`
+  * Joints connecting wheels to the base
+
+### TF (Transform) Understanding
+
+* Learned how coordinate frames are structured in a robot
+* Understood the relationship between:
+
+  * Links (physical components)
+  * Joints (connections)
+  * TF tree (coordinate transformations)
+* Debugged common TF issues such as:
+
+  * Missing transforms
+  * Incorrect fixed frame in RViz
+
+### Robot State Publishing
+
+* Used `robot_state_publisher` to publish transforms from URDF
+* Integrated `joint_state_publisher` to simulate joint states
+* Understood the pipeline:
+
+  * Joint states → Transform computation → Visualization
+
+### RViz Visualization
+
+* Visualized the robot model in RViz
+* Configured:
+
+  * Fixed frame (`base_link`)
+  * RobotModel display
+  * TF display
+* Debugged visualization errors and frame mismatches
+
+### Geometry and Orientation Fixes
+
+* Corrected wheel placement using joint origins
+* Fixed wheel orientation using RPY (roll, pitch, yaw)
+* Understood default axis alignment in URDF (cylinder along Z-axis)
+
+### Key Learnings
+
+* URDF defines structure, not behavior
+* TF is essential for spatial understanding in robotics
+* Visualization tools are critical for debugging
+* Proper frame management is required for all robotic systems
+
+---
+
+This stage marks the transition from basic ROS 2 communication to building and understanding the physical structure of a robot, which is essential for simulation and real-world deployment.
+
+
 ---
 
 ## Author
